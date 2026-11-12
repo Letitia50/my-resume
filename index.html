@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷網站</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body bgcolor="#f7f5ef">
+    <div class="page_container">
+        <!-- 頂端列 -->
+        <header class="website_header">
+            <span class="website_name">MY PORTFOLIO</span>
+
+            <nav>
+                <div class="header_link">
+                    <a href="#about">基本資訊</a>
+                    <a href="#projects">專案經歷</a>
+                    <a href="#skills">技能</a>
+                    <a href="#contact">聯絡資訊</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- 基本資訊 -->
+        <section class="basic_info" id="about">
+            <div class="basic_text">
+                <h2 class="basic_title">01 基本資訊</h2>
+                <h1>會計 × 資訊</h1>
+                <p class="basic_name">
+                    王辰允
+                </p>
+                <p class="basic_school">
+                    中原大學｜會計學系主修 × 資訊管理學系輔系
+                </p>
+                <p class="basic_intro">
+                    遇到生活中的問題時，我常會嘗試自己尋找解決方法，或製作工具讓事情更容易處理，
+                    也因此陸續製作了進銷存系統、發票管理系統及日常規劃工具。
+                    雖然還有很多需要學習的地方，但我很喜歡從研究問題、嘗試不同做法，
+                    到最後把功能實際做出來的過程。
+                </p>
+                <blockquote class="basic_slogan">
+                    從實際問題出發，把想法做出來。
+                </blockquote>
+            </div>
+
+            <img class="basic_photo" src="image/photo.jpg" alt="王辰允的個人照片">
+        </section>
+
+        <!-- 專案經歷 -->
+        <section class="project_info" id="projects">
+            <h2 class="project_title">02 專案經歷</h2>
+            <div class="project_content">
+                <article class="project_card">
+                    <h3>ERP 進銷存系統</h3>
+                    <div class="project_gallery">
+                        <input type="radio" name="erp_image" title="POS 收銀" checked>
+                        <div class="project_slide">
+                            <img src="image/erp01.png" alt="ERP POS 收銀畫面（示範資料）">
+                        </div>
+                        <input type="radio" name="erp_image" title="進貨管理">
+                        <div class="project_slide">
+                            <img src="image/erp02.png" alt="ERP 進貨清單（示範資料）">
+                        </div>
+                        <input type="radio" name="erp_image" title="庫存管理">
+                        <div class="project_slide">
+                            <img src="image/erp03.png" alt="ERP 庫存管理畫面（示範資料）">
+                        </div>
+                    </div>
+                    <p>
+                        為了改善家中店面帳目不清楚與商品來源不易釐清的問題，也因為想挑戰自己能否建立進銷存系統，我在 AI 協助下，
+                        獨立開發了這套系統。專案使用 TypeScript、React 與輕量的 SQLite 資料庫，並透過Electron
+                        做成桌面應用程式。
+                    </p>
+                    <p>
+                        系統涵蓋進貨、銷售及庫存管理等功能，並依照店裡需求，特別區分自有商品與寄銷商品。這是我第一次開發系統，
+                        從原本對程式完全一無所知，到逐步建立系統架構與功能，這個過程讓我很有成就感。雖然最後仍基於個人考量，
+                        未將系統正式投入日常的營運，但開發過程中，我逐步學習了 SQL 語法、功能實作與需求分析，累積了許多實際經驗。
+                    </p>
+                    <p>
+                        我認為開發中最困難的部分，是把店裡實際的業務流程整理成明確規則，再與 AI 溝通並逐步實作。例如，
+                        自有與寄銷商品雖然都放在店內，但商品屬於誰、什麼時候需要付款給供應商，處理方式並不相同；進貨、銷售與退貨，
+                        也都會影響庫存數量與金額。因此，除了確認畫面能否操作，我也需要反覆檢查資料表間的關聯、SQL 查詢，
+                        以及數量與金額的計算結果是否正確。做出可以操作的功能往往只是第一步，更重要的是確認系統是否符合使用者的需求，
+                        以及資料能否被持久化保存與處理。
+                    </p>
+                </article>
+                <article class="project_card">
+                    <h3>VAT 發票管理系統</h3>
+                    <div class="project_gallery">
+                        <input type="radio" name="vat_image" title="期間統計報表" checked>
+                        <div class="project_slide">
+                            <img src="image/vat01.png" alt="VAT 期間統計報表稅額結果（示範資料）">
+                        </div>
+                        <input type="radio" name="vat_image" title="發票批次管理">
+                        <div class="project_slide">
+                            <img src="image/vat02.png" alt="VAT 發票批次清單（示範資料）">
+                        </div>
+                    </div>
+                    <p>
+                        這套 VAT 發票管理系統則是為了長期保存店內的發票紀錄，並快速瀏覽各期資料而製作。
+                        當時課堂上剛好學到稅務法規，也希望能在營業稅申報前自行進行稅額試算，
+                        因此嘗試將店內的發票紀錄與試算需求整合成一套工具。
+                    </p>
+                    <p>
+                        系統依期別整理進項與銷項發票，提供批次管理、稅額統計與 PDF 匯出功能。
+                        實作過程相對順利，沒有遇到特別大的困難，
+                        主要是把課堂上的稅務概念轉換成實際的紀錄與試算功能。
+                    </p>
+                </article>
+                <article class="project_card">
+                    <h3>CampusSync｜Android App</h3>
+                    <div class="android_images">
+                        <img src="image/android01.png" alt="CampusSync 課表總覽畫面">
+                        <img src="image/android02.png" alt="CampusSync 今日摘要與下一堂課資訊">
+                        <img src="image/android03.png" alt="CampusSync 待辦分類與完成狀態">
+                    </div>
+                    <p>
+                        CampusSync 的製作動機，是希望將課表、日程、待辦與筆記整合在同一個 App，
+                        減少查看課程資訊與安排日常事項時，需要在不同工具間反覆切換的不便。
+                    </p>
+                    <p>
+                        開發過程中最大的挑戰，是從桌面應用轉向 Android 手機：
+                        除了使用的語言從較熟悉的 TypeScript 轉為 Kotlin，
+                        也必須思考與設計如何在較小的螢幕中，合理安排資訊密度與操作入口。
+                        經過一段時間的摸索，並透過實際操作反覆調整畫面，
+                        終於讓課表、待辦與日程更符合我個人的使用習慣與需求。
+                    </p>
+                </article>
+            </div>
+        </section>
+        <!-- 技能 -->
+        <section class="skill_info" id="skills">
+            <div>
+                <h2 class="skill_title">03 技能</h2>
+                <h3>技能與工具</h3>
+                <p>
+                    程式・會計
+                </p>
+            </div>
+            <ul class="skill_list">
+                <li>
+                    會計基礎
+                    <div class="skill_bar" aria-hidden="true">
+                        <div class="skill_fill" style="width: 85%;"></div>
+                    </div>
+                </li>
+                <li>
+                    Excel
+                    <div class="skill_bar" aria-hidden="true">
+                        <div class="skill_fill" style="width: 75%;"></div>
+                    </div>
+                </li>
+                <li>
+                    SQL 與 SQLite
+                    <div class="skill_bar" aria-hidden="true">
+                        <div class="skill_fill" style="width: 65%;"></div>
+                    </div>
+                </li>
+                <li>
+                    HTML 與 CSS
+                    <div class="skill_bar" aria-hidden="true">
+                        <div class="skill_fill" style="width: 70%;"></div>
+                    </div>
+                </li>
+                <li>
+                    TypeScript
+                    <div class="skill_bar" aria-hidden="true">
+                        <div class="skill_fill" style="width: 50%;"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- 聯絡資訊與頁尾 -->
+    <footer class="website_footer" id="contact">
+        <div class="page_container">
+            <h2 class="footer_title">04 聯絡資訊</h2>
+            <div class="footer_contact">
+                <a href="mailto:like08059@gmail.com">
+                    Email
+                    <span class="contact_value">like08059@gmail.com</span>
+                </a>
+                <a href="https://www.instagram.com/chen_yun24/" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                    <span class="contact_value">chen_yun24</span>
+                </a>
+                <a href="https://github.com/Letitia50" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                    <span class="contact_value">Letitia50</span>
+                </a>
+            </div>
+            <p class="footer_copyright">
+                © 個人履歷網站
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

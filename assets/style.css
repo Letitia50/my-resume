@@ -1,0 +1,468 @@
+/* 載入字型 */
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url("noto-sans-tc.ttf") format("truetype");
+    font-weight: 100 900;
+}
+
+/* 網頁初始化 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* 設定字型 */
+body {
+    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+    color: #233f36;
+}
+
+/* 移除超連結的預設樣式 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 共用外框 */
+.page_container {
+    max-width: 1136px;
+    margin: 0 auto;
+}
+
+/* 頂端列-版面配置 */
+.website_header {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    margin: 20px 0 0;
+    padding: 20px 0 40px;
+    border-bottom: 1px solid #c4cec5;
+    font-weight: bold;
+}
+
+/* 頂端列-網站名稱 */
+.website_name {
+    font-size: 22px;
+}
+
+/* 頂端列-導覽連結 */
+.header_link a {
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+/* 頂端列-hover效果 */
+.header_link a:hover {
+    color: #9b6c46;
+}
+
+/* 連結置右 */
+nav {
+    text-align: right;
+}
+
+/* 基本資料-版面 */
+.basic_info {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    padding: 44px 0 40px;
+    border-bottom: 1px solid #c4cec5;
+    line-height: 1.5;
+}
+
+/* 基本資料-標題 */
+.basic_title {
+    color: #b58a62;
+    font-size: 36px;
+    line-height: 1.35;
+}
+
+/* 基本資料-會計x資訊 */
+.basic_text h1 {
+    margin-top: 24px;
+    font-size: 72px;
+    line-height: 1.35;
+}
+
+/* 基本資料-姓名 */
+.basic_name {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* 基本資料-學校 */
+.basic_school {
+    margin-top: 14px;
+    color: #718079;
+    font-size: 21px;
+}
+
+/* 基本資料-自我介紹 */
+.basic_intro {
+    margin-top: 25px;
+    color: #718079;
+    font-size: 19px;
+}
+
+/* 基本資料-座右銘 */
+.basic_slogan {
+    margin-top: 21px;
+    padding: 6px 0 8px 26px;
+    border-left: 4px solid #df5d35;
+    font-size: 22px;
+}
+
+/* 基本資料-個人照片框 */
+.basic_photo {
+    width: 286px; /* 設定框的寬度 */
+    height: 332px; /* 設定框的高度 */
+    margin-left: auto; 
+    margin-right: 32px; 
+    border: 32px solid #deebe1; /* 設定外框顏色 */
+    border-radius: 45%; /* 把四個角變圓，形成目前的橢圓狀外觀 */
+    object-fit: cover; /* 照片保持比例填滿內框，超出的部分裁掉 */
+}
+
+/* 專案經歷-版面 */
+.project_info {
+    padding: 44px 0;
+    border-bottom: 1px solid #c4cec5;
+}
+
+/* 專案經歷-區塊標題 */
+.project_title {
+    color: #b58a62;
+    font-size: 36px;
+    line-height: 1.35;
+}
+
+/* 專案經歷-共用外框 */
+.project_content {
+    max-width: 100%;
+    margin: 20px auto 0;
+}
+
+/* 專案經歷-專案版面 */
+.project_card {
+    margin-bottom: 25px;
+}
+
+/* 專案經歷-標題 */
+.project_card h3 {
+    margin-bottom: 16px;
+    font-size: 32px;
+}
+
+/* 專案經歷-段落說明 */
+.project_card p {
+    width: 95%;
+    margin: 20px auto 0;
+    font-size: 20px;
+    line-height: 1.75;
+}
+
+/* 專案經歷-專案圖片 */
+.project_card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+/* 專案經歷-圖片切換區 */
+.project_gallery {
+    position: relative;
+    width: 100%;
+    padding-bottom: 44px;
+    border: 1px solid #c4cec5;
+    border-radius: 16px;
+    text-align: center;
+}
+
+/* 專案經歷-radio 圓點 */
+.project_gallery input {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+/* 專案經歷-第一個圓點位置 */
+.project_gallery input:first-of-type {
+    margin-left: -40px;
+}
+
+/* 專案經歷-第二個圓點位置 */
+.project_gallery input:nth-of-type(2) {
+    margin-left: -8px;
+}
+
+/* 專案經歷-第三個圓點位置 */
+.project_gallery input:nth-of-type(3) {
+    margin-left: 24px;
+}
+
+/* 專案經歷-兩張圖片的圓點整組置中 */
+.project_gallery input[name="vat_image"] {
+    transform: translateX(16px);
+}
+
+/* 專案經歷-切換圖片 */
+.project_slide {
+    display: none;
+    width: 100%;
+}
+
+/* 專案經歷-選取 radio 後顯示相鄰圖片（參考 AI） */
+.project_gallery input:checked + .project_slide {
+    display: block;
+}
+
+/* 專案經歷-Android圖片並排 */
+.android_images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 978px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* 專案經歷-Android圖片邊框 */
+.android_images img {
+    min-width: 0;
+    border: 1px solid #c4cec5;
+    border-radius: 16px;
+}
+
+/* 技能-版面 */
+.skill_info {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 24px;
+    align-items: start;
+    min-height: 378px;
+    padding: 44px 0;
+}
+
+/* 技能-右側清單 */
+.skill_list {
+    padding-left: 48px;
+    border-left: 1px solid #c4cec5;
+    list-style: none;
+}
+
+/* 技能-清單項目 */
+.skill_list li {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    align-items: center;
+    height: 54px;
+    padding: 10px 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* 技能-底色長條 */
+.skill_bar {
+    height: 12px;
+    border-radius: 6px;
+    background-color: #deebe1;
+}
+
+/* 技能-程度長條（參考 AI：載入時從左側展開，耗時 1 秒） */
+.skill_fill {
+    height: 100%;
+    border-radius: 6px;
+    background-color: #b58a62;
+    transform-origin: left;
+    animation: skill_grow 1s ease-in-out;
+}
+
+/* 技能-長條展開動畫（參考 AI） */
+@keyframes skill_grow {
+    /* 起點-水平縮至零 */
+    from {
+        transform: scaleX(0);
+    }
+    /* 終點-恢復原本長度 */
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* 技能-配合系統的減少動畫設定 */
+@media (prefers-reduced-motion: reduce) {
+    /* 技能-直接顯示完成長度 */
+    .skill_fill {
+        animation: none;
+    }
+}
+
+/* 技能-區塊標題 */
+.skill_title {
+    color: #b58a62;
+    font-size: 36px;
+}
+
+/* 技能-主標題 */
+.skill_info h3 {
+    margin-top: 18px;
+    font-size: 42px;
+}
+
+/* 技能-分類說明 */
+.skill_info p {
+    margin-top: 24px;
+    font-size: 20px;
+    color: #718079;
+}
+
+/* 頁尾-版面 */
+.website_footer {
+    padding: 44px 0 24px;
+    background-color: #203f36;
+    color: #f7f5ef;
+}
+
+/* 頁尾-聯絡標題 */
+.footer_title {
+    font-size: 36px;
+    color: #ddb39a;
+}
+
+/* 頁尾-聯絡欄位 */
+.footer_contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 90%;
+    margin: 24px auto;
+    padding: 0 20px;
+}
+
+/* 頁尾-聯絡卡片（參考 AI：位置與背景色在 0.18 秒內平順變化） */
+.footer_contact a {
+    display: block;
+    padding: 20px 24px;
+    border-radius: 13px;
+    background-color: #e7e7d9;
+    color: #233f36;
+    font-weight: bold;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+/* 頁尾-[特效] 滑鼠移入時，卡片上移 4px 並變色（參考 AI） */
+.footer_contact a:hover {
+    transform: translateY(-4px);
+    color: #9b6c46;
+    background-color: #deebe1;
+}
+
+/* 頁尾-聯絡帳號 */
+.contact_value {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #65736b;
+}
+
+/* 頁尾-版權文字 */
+.footer_copyright {
+    padding-top: 20px;
+    border-top: 1px solid #668176;
+    font-size: 14px;
+}
+
+/* RWD-小螢幕排版 */
+@media (max-width: 1080px) {
+    /* RWD-頁面左右留白 */
+    .page_container {
+        padding: 0 16px;
+    }
+
+    /* RWD-頂端列改為單欄 */
+    .website_header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 0;
+        padding: 24px 0;
+    }
+
+    /* RWD-導覽連結分成兩欄 */
+    .header_link {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    /* RWD-導覽連結大小與間距 */
+    .header_link a {
+        margin-left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* RWD-基本資訊改為單欄 */
+    .basic_info {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* RWD-主標題縮小 */
+    .basic_text h1 {
+        font-size: 42px;
+    }
+
+    /* RWD-個人照片置中且不超出外框 */
+    .basic_photo {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* RWD-專案說明使用完整文字寬度 */
+    .project_card p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    /* RWD-Android圖片改為上下排列 */
+    .android_images {
+        grid-template-columns: 1fr;
+        width: 310px;
+    }
+
+    /* 技能-改為單欄 */
+    .skill_info {
+        grid-template-columns: 1fr;
+    }
+
+    /* 技能-移除左右欄分隔 */
+    .skill_list {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    /* RWD-技能名稱與長條上下排列 */
+    .skill_list li {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        height: auto;
+    }
+
+    /* 頁尾-聯絡卡片改為單欄 */
+    .footer_contact {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
